@@ -7,17 +7,17 @@ y_data = np.array([2.0, 4.0, 6.0], dtype=np.float64)
 
 
 def forward(x, w, b):
-    """Calculate the prediction of the linear model."""
+    """线性模型"""
     return w * x + b
 
 
 def mean_squared_error(x, y, w, b):
-    """Calculate the mean squared error of the current model."""
+    """均方误差 MSE"""
     return np.mean((forward(x, w, b) - y) ** 2)
 
 
 def gradient_descent_step(x, y, w, b, learning_rate):
-    """Perform one gradient descent update and return w, b, grad_w, grad_b."""
+    """梯度下降算法"""
     y_pred = forward(x, w, b)
     error = y_pred - y
 
@@ -32,7 +32,7 @@ def gradient_descent_step(x, y, w, b, learning_rate):
 
 
 learning_rate = 0.01
-epochs = 1000
+epochs = 10000
 w = 0.0
 b = 0.0
 
